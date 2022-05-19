@@ -36,18 +36,11 @@ class Recherchetxt():
                 return "Le séquence recherchée ('" + self.chaine + "') apparait " + str(cpt) + " fois, aux positions n°: " + chaine_positions
             
     def compter(self):
-        liste_txt = self.texte.split(" ")
+        liste_txt = self.texte.split(" ", "a")
+        print(liste_txt)
         return "Il y a " + str(len(liste_txt)) + " mots dans ce texte"
-        
-a = Recherchetxt("la", """Alors qu'elle est une des plus anciennes équipes nationales de football, l'équipe d'Irlande du Nord 
-                 est en 1957-1958 une nouvelle venue dans le monde du football international car c'est la première fois qu'elle 
-                 participe aux qualifications à la Coupe du monde. Jusqu'alors, son activité internationale se limitait à des matchs 
-                 contre des équipes britanniques et à d'occasionnels matchs internationaux amicaux. Après s'être qualifiée à la 
-                 surprise générale en éliminant le Portugal et l'Italie, l'équipe voit sa préparation pour la compétition troublée 
-                 par plusieurs évènements. Le premier est l'accident aérien de Munich le 6 février 1958, qui décime l'équipe de 
-                 Manchester United où exerçaient deux joueurs essentiels de l'équipe nationale nord-irlandaise : Jackie Blanchflower, 
-                 qui est obligé d'arrêter la pratique du football de haut niveau, et Harry Gregg, profondément marqué physiquement et 
-                 psychologiquement. Ensuite, une longue querelle se déclenche au sein de la nation nord-irlandaise sur la pratique du 
-                 football le dimanche, ce qui semble compromettre la participation de l'équipe à la Coupe du monde.""")
+
+###Instanciations###     
+a = Recherchetxt("la", "Alors qu'elle est une des plus anciennes équipes nationales de football, l'équipe d'Irlande du Nord est en 1957-1958 une nouvelle venue dans le monde du football international car c'est la première fois qu'elle participe aux qualifications à la Coupe du monde. Jusqu'alors, son activité internationale se limitait à des matchs contre des équipes britanniques et à d'occasionnels matchs internationaux amicaux. Après s'être qualifiée à la surprise générale en éliminant le Portugal et l'Italie, l'équipe voit sa préparation pour la compétition troublée par plusieurs évènements.")
 print(a.recherche())
 print(a.compter())
