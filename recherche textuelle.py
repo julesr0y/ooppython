@@ -36,8 +36,7 @@ class Recherchetxt():
                 return "Le séquence recherchée ('" + self.chaine + "') apparait " + str(cpt) + " fois, aux positions n°: " + chaine_positions
             
     def compter(self):
-        liste_txt = self.texte.split(" ", "a")
-        print(liste_txt)
+        liste_txt = self.texte.split(" ")
         return "Il y a " + str(len(liste_txt)) + " mots dans ce texte"
 
 ###Instanciations###     
