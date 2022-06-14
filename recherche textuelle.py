@@ -2,7 +2,6 @@
 """
 @author: jules
 """
-#import unidecode
 import re
 
 class Recherchetxt():
@@ -19,13 +18,13 @@ class Recherchetxt():
             if self.chaine in liste_txt[i] and len(liste_txt[i]) == len(self.chaine):
                 liste_positions.append(i)
         if liste_positions == []:
-            return "Aucun résultat"
+            return "La séquence recherchée n'apparaît pas dans ce texte"
         else:
             cpt = 0
             liste_positions = list(reversed(liste_positions))
             while liste_positions != []:
                 new = liste_positions.pop()
-                chaine_positions += str(new + 1) + " "
+                chaine_positions += str(new + 1) + " " #nécessaire d'ajouter 1 car on part de 0 avec les index
                 cpt += 1
             if cpt == 1:
                 return "La séquence recherchée ('" + self.chaine + "') apparait une fois en position n°: " + chaine_positions
@@ -35,7 +34,6 @@ class Recherchetxt():
     def compter(self):
         texte_formate = re.sub("\,|\;|\.|\!|\?", "", self.texte)
         liste_txt = texte_formate.split(" ")
-        print(liste_txt)
         compteur = 0
         for mot in liste_txt:
             if "'" in mot:
@@ -48,9 +46,11 @@ class Recherchetxt():
 
 ###Instanciations###     
 a = Recherchetxt("la", "Alors qu'elle est une des plus anciennes équipes nationales de football, l'équipe d'Irlande du Nord est en 1957-1958 une nouvelle venue dans le monde du football international car c'est la première fois qu'elle participe aux qualifications à la Coupe du monde. Jusqu'alors, son activité internationale se limitait à des matchs contre des équipes britanniques et à d'occasionnels matchs internationaux amicaux. Après s'être qualifiée à la surprise générale en éliminant le Portugal et l'Italie, l'équipe voit sa préparation pour la compétition troublée par plusieurs évènements.")
+print("Test a")
 print(a.recherche())
 print(a.compter())
 
-b = Recherchetxt("la", "Alors ; qu'elle")
+b = Recherchetxt("la", "Alors lala qu'elle")
+print("Test b")
 print(b.recherche())
 print(b.compter())
